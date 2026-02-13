@@ -97,10 +97,10 @@ int main() {
     mySportCar -> startEngine();
     mySportCar -> shiftGear(1);
     mySportCar -> acclerate();
-    mySportsCar->shiftGear(2);
-    mySportsCar->accelerate();
-    mySportsCar->brake();
-    mySportsCar->stopEngine();
+    mySportsCar -> shiftGear(2);
+    mySportsCar -> accelerate();
+    mySportsCar -> brake();
+    mySportsCar -> stopEngine();
 
     // //Setting arbitrary value to speed.
     // mySportsCar->currentSpeed = 500;
