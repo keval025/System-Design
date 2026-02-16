@@ -102,7 +102,7 @@ int main() {
     mySportsCar -> brake();
     mySportsCar -> stopEngine();
 
-    // //Setting arbitrary value to speed.
+    // //Setting  value to Speed.
     // mySportsCar->currentSpeed = 500;
 
     // cout << "Current Speed of My Sports Car is set to " << mySportsCar->currentSpeed << endl;

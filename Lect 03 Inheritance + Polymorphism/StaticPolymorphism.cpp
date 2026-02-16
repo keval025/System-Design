@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-using namespace str;
+using namespace std;
 
 /*
 Static Polymorphism (Compile-time polymorphism) in real life says that
@@ -28,7 +28,7 @@ class ManualCar {
             this -> currentGear = 0;
         }
 
-        void startEngin() {
+        void startEngine() {
             isEngineOn = true;
             cout << brand << " " << model << ": engine is start" << endl;
         }
@@ -40,7 +40,7 @@ class ManualCar {
             cout << brand << " " << model << ": engine is stop" << endl;
         }
 
-        void acclerate(int speed){
+        void accelrate(int speed){
             if(!isEngineOn){
                 cout << brand << " " << model << ": engine is not started" << endl;
             }
@@ -48,15 +48,15 @@ class ManualCar {
             cout << brand << " " << model << ": current speed is -> " << currentSpeed << endl;
         }
 
-        void break(){
-            currenSpeed  -= 10;
+        void brake(){
+            currentSpeed -= 10;
             if(currentSpeed < 0) currentSpeed = 0;
-            cout << brand << " " << model << ": brekes to -> " << currentspeed << endl;
+            cout << brand << " " << model << ": brekes to -> " << currentSpeed << endl;
         }
 
         void shiftedGear(int gear){
             currentGear = gear;
-            cout << beand << " " << model << ": gear shifted to -> " << currentGear << endl;
+            cout << brand << " " << model << ": gear shifted to -> " << currentGear << endl;
         }
 };
 
@@ -65,8 +65,8 @@ class ManualCar {
 int main() {
     ManualCar* myManualCar = new ManualCar("Suzuki", "WagonR");
     myManualCar->startEngine();
-    myManualCar->accelerate();
-    myManualCar->accelerate(40);
+    myManualCar->accelrate(20);
+    myManualCar->accelrate(40);
     myManualCar->brake();
     myManualCar->stopEngine();
 
