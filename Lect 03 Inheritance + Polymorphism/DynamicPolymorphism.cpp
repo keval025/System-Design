@@ -46,3 +46,94 @@ class Car {
         virtual ~Car() {}              // Virtual destractor
 };
 
+class ManualCar : public Car {
+    private: 
+        int currentGear;
+
+    public:
+        ManualCar(string brand, string model) : Car(brand, model){
+            this -> currentGear = 0;
+        }
+
+        void shiftGear(int gear){
+            currentGear = gear;
+            cout << brand << " " << model << ": shifted to gear " << endl;
+        }
+
+        void accelerate() {
+            if(!isEngineOn){
+                cout << brand << " " << model << ": engine is off!" << endl;
+                return;
+            }
+            currentSpeed += 10;
+            cout << brand << " " << model << ": accelerating!" << endl;
+        }
+
+        void brake() {
+            if(!isEngineOn){
+                cout << brand << " " << model << ": engine is off!" << endl;
+                return;
+            }
+            currentSpeed -= 10;
+            cout << brand << " " << model << ": braking!" << endl;
+        }
+
+        ~ManualCar() {
+            cout << brand << " " << model << ": manual car destroyed!" << endl;
+        }
+};
+
+class ElectricCar : public Car {
+    private:
+        int batteryLevel;
+
+    public:
+        ElectricCar(string brand, string model) : Car(brand, model){
+            this -> batteryLevel = 100;
+        }
+
+        void chargeBattery(){
+            batteryLevel = 100;
+            cout << brand << " " << model << ": battery is charged!" << endl;
+        }
+
+        void accelerate() {
+            if(!isEngineOn){
+                cout << brand << " " << model << ": engine is off!" << endl;
+                return;
+            }
+            currentSpeed += 10;
+            cout << brand << " " << model << ": accelerating!" << endl;
+        }
+
+        void brake() {
+            if(!isEngineOn){
+                cout << brand << " " << model << ": engine is off!" << endl;
+                return;
+            }
+            currentSpeed -= 10;
+            cout << brand << " " << model << ": braking!" << endl;
+        }
+
+        ~ElectricCar() {
+            cout << brand << " " << model << ": electric car destroyed!" << endl;
+        }
+};
+
+int main() {
+    Car* car1 = new ManualCar("Toyota", "Corolla"); // Dynamic Polymorphism for Manual Car
+    Car* car2 = new ElectricCar("Tesla", "Model S"); // Dynamic Polymorphism for Electric Car
+
+    car1 -> startEngine();
+    car1 -> accelerate();
+    car1 -> brake();
+    car1 -> stopEngine();
+
+    car2 -> startEngine();
+    car2 -> accelerate();
+    car2 -> brake();
+    car2 -> stopEngine();
+
+    delete car1;
+    delete car2;
+}
