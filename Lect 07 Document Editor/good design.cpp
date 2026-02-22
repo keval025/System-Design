@@ -15,11 +15,11 @@ class TextElement : public DocumentElement {
         string text;
 
     public:
-        TextElement(string text){
+        TextElement(string text){z
             this -> text = text;
         }
 
-        string render() override {
+        string render() override { 
             return text;
         }
 };
