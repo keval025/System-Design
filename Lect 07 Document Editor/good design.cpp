@@ -15,7 +15,7 @@ class TextElement : public DocumentElement {
         string text;
 
     public:
-        TextElement(string text){z
+        TextElement(string text){
             this -> text = text;
         }
 
