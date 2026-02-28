@@ -9,6 +9,7 @@ class Car {
         string model;
         bool isEngineOn;
         int currentSpeed;
+        
 
     public:
         Car(string brand, string model){
